@@ -1,5 +1,5 @@
 import './App.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getCity } from './services/getCity'
 import { getWeather } from './services/getWeather'
 import { Data } from './components/Data'
@@ -13,17 +13,28 @@ function App() {
     setLoading(true);
     let ciudad = await getCity();
     let clima = await getWeather(ciudad);
+    if (ciudad === null || clima === null) {
+      console.log('Error al obtener los datos');
+      return;
+    }
     setLoading(false);
-    console.log(clima);
     setClima(clima);
   }
-  
+
+  useEffect(() => {
+    obtenerClima();
+
+    const interval = setInterval(() => {
+      obtenerClima();
+      console.log('Actualizando...');
+    }, 300000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div>
-      <h1>Clima Express</h1>  
-      <button onClick={()=>{obtenerClima()}}>{clima? 'Actualizar Clima' : 'Obtener Clima'}</button>
-      {loading && <p>Cargando...</p>}
-      {clima !== null && <Data location={clima.location} current={clima.current}/>}
+    <div className='App'>
+      {clima !== null && <Data location={clima.location} current={clima.current} loading={loading}/>}
     </div>
   ) 
 }

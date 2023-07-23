@@ -1,0 +1,109 @@
+.data{
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.info{
+    color: white;
+    background: rgb(89, 89, 134);
+    border-radius: 15px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.info .widget-location{
+    color: white;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.info .widget-data{
+    color: white;
+    background: rgb(111, 111, 146);
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.widget-data i {
+    font-size: 8em;
+    margin: 0 auto;
+    text-align: center;
+}
+.widget-data p {
+    font-weight: 700;
+    font-family: 'Noto Sans', sans-serif;
+}
+.widget-data > h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.widget-info{
+    display: flex;
+    flex-direction: row;
+    color: rgb(255, 255, 255);
+    margin: 0 auto;
+    width: 100%;
+    padding: 15px;
+}
+.widget-info > div{
+    width: 33%;
+    text-align: center;
+    padding: 10px;
+}
+.data span{
+    font-weight: lighter;
+    font-family: 'Noto Sans', sans-serif;
+    padding-top: 0;
+    color: rgb(194, 188, 188);
+    margin-top: 10px;
+}
+@media (max-width: 610px) {
+    .data{
+        width: 100vw;
+        height: 100vh;
+    }
+    .info{
+        width: 100%;
+        height: 100%;
+    }
+    .info .widget-location{
+        width: 100%;
+    }
+    .info .widget-data{
+        width: 100%;
+    }
+    .widget-data i {
+        font-size: 5em;
+    }
+    .widget-data p {
+        font-size: 1.5em;
+    }
+    .widget-data > h1 {
+        font-size: 2em;
+    }
+    .widget-info{
+        flex-direction: column;
+    }
+    .widget-info > div{
+        width: 100%;
+        margin-bottom: 2%;
+        margin-top: 2%;
+        padding: 0;
+    }
+    .widget-info > div > h5{
+        font-size: 1em;
+    }
+    .widget-info > div > p{
+        font-size: 1.5em;
+    }
+}
