@@ -36,7 +36,7 @@ function App() {
   return (
     <div className='App'>
       {clima !== null && <Data location={clima.location} current={clima.current} loading={loading}/>}
-      {clima === null && <ErrorMessage />}
+      {clima === null && !loading && <ErrorMessage />}
     </div>
   ) 
 }
