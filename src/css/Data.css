@@ -68,6 +68,9 @@
     margin-top: 10px;
 }
 @media (max-width: 610px) {
+    .presion{
+        display: none;
+    }
     .data{
         width: 100vw;
         height: 100vh;
@@ -75,35 +78,51 @@
     .info{
         width: 100%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
     }
     .info .widget-location{
         width: 100%;
+        font-size: 1em;
+        margin-bottom: 5%;
     }
-    .info .widget-data{
+    .widget-data{
+        margin-bottom: 5%;
         width: 100%;
     }
     .widget-data i {
-        font-size: 5em;
-    }
-    .widget-data p {
-        font-size: 1.5em;
+        font-size: 600%;
     }
     .widget-data > h1 {
-        font-size: 2em;
+        font-size: 1.5em;
+    }
+    .widget-data > h2 {
+        font-size: 1em;
     }
     .widget-info{
         flex-direction: column;
     }
-    .widget-info > div{
-        width: 100%;
-        margin-bottom: 2%;
-        margin-top: 2%;
-        padding: 0;
+    .widget-info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2% 2%;
     }
-    .widget-info > div > h5{
-        font-size: 1em;
-    }
-    .widget-info > div > p{
-        font-size: 1.5em;
-    }
+  .widget-info > div {
+    width: 100%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    padding: 0;
+  }
+  .widget-info > div > h5 {
+    font-size: 0.8em;
+  }
+  .widget-info > div > p {
+    font-size: 1em;
+  }
+  span{
+    font-size: 0.8em;
+  }
 }

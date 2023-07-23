@@ -41,28 +41,28 @@ export const Data = ({location, current, loading}) => {
           <h2>{getConditionCode(condition.code)}</h2>
         </div>
         <div className="widget-info">
-          <div>
+          <div className="viento">
             <i className="bi bi-wind"></i>
             <h5>Viento</h5>
             <p>{wind_kph} Km/h</p>
             <i className={`bi ${getWindDirectionIcon(wind_dir)}`}></i>
           </div>
-          <div>
+          <div className="humedad">
             <i className="bi bi-droplet-half"></i>
             <h5>Humedad</h5>
             <p>{humidity}%</p>
           </div>
-          <div>
+          <div className="sensacion">
             <i className="bi bi-thermometer-half"></i>
             <h5>Sensación</h5>
             <p>{feelslike_c}°C</p>
           </div>
-          <div>
+          <div className="uv">
             <i className="bi bi-sun"></i>
             <h5>Indice UV</h5>
             <p>{getUVDescription(uv)}</p>
           </div>
-          <div>
+          <div className="presion">
             <i className="bi bi-speedometer"></i>
             <h5>Presión ATM</h5>
             <p>{pressure_mb} mb</p>
