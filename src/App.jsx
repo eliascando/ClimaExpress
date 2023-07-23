@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { getCity } from './services/getCity'
 import { getWeather } from './services/getWeather'
 import { Data } from './components/Data'
+import { ErrorMessage } from './components/ErrorMessage'
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
     const interval = setInterval(() => {
       obtenerClima();
       console.log('Actualizando...');
-    }, 300000);
+    }, 100000);
 
     return () => clearInterval(interval);
   }, []);
@@ -35,6 +36,7 @@ function App() {
   return (
     <div className='App'>
       {clima !== null && <Data location={clima.location} current={clima.current} loading={loading}/>}
+      {clima === null && <ErrorMessage />}
     </div>
   ) 
 }
