@@ -28,7 +28,7 @@ export const Data = ({location, current}) => {
     let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return fecha.toLocaleDateString('es-ES', options);
   }
-  let day = is_day ? true : false;
+  let day = is_day === 1 ? true : false;
 
   return (
     <div className="data">
