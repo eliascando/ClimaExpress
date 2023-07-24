@@ -28,6 +28,7 @@ export const Data = ({location, current}) => {
     let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return fecha.toLocaleDateString('es-ES', options);
   }
+  
   let day = is_day === 1 ? true : false;
 
   return (
@@ -38,9 +39,9 @@ export const Data = ({location, current}) => {
           <h3>{formatDate(localtime)}</h3>
         </div>
         <div className="widget-data">
-          <i className={`bi ${getIconCode(condition.code)}`}></i> 
+          <i className={`bi ${getIconCode(condition.code, day)}`}></i> 
           <h1>{temp_c}°C</h1>
-          <h2>{getConditionCode(condition.code, day)}</h2>
+          <h2>{getConditionCode(condition.code)}</h2>
         </div>
         <div className="widget-info">
           <div className="viento">
