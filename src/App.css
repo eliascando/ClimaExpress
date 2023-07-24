@@ -27,6 +27,21 @@
   margin: 0 auto;
   text-align: center;
 }
+.loading{
+  color: rgb(253, 246, 246);
+  font-size: 2em;
+  font-weight: 700;
+  font-family: 'Noto Sans', sans-serif;
+  background: rgb(89, 89, 134);
+  border-radius: 15px;
+  padding: 15px;
+  margin: 15px;
+}
+.loading i {
+  font-size: 5em;
+  margin: 0 auto;
+  text-align: center;
+}
 
 @media (max-width: 768px) {
   .App {

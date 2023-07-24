@@ -4,6 +4,7 @@ import { getCity } from './services/getCity'
 import { getWeather } from './services/getWeather'
 import { Data } from './components/Data'
 import { ErrorMessage } from './components/ErrorMessage'
+import { Loading } from './components/Loading'
 
 function App() {
 
@@ -18,8 +19,8 @@ function App() {
       console.log('Error al obtener los datos');
       return;
     }
-    setLoading(false);
     setClima(clima);
+    setLoading(false);
   }
 
   useEffect(() => {
@@ -35,8 +36,9 @@ function App() {
 
   return (
     <div className='App'>
-      {clima !== null && <Data location={clima.location} current={clima.current} loading={loading}/>}
-      {clima === null && !loading && <ErrorMessage />}
+      {clima && <Data location={clima.location} current={clima.current}/>}
+      {!clima && loading && <Loading />}
+      {!clima && !loading && loading !== null && <ErrorMessage />}
     </div>
   ) 
 }

@@ -3,7 +3,7 @@ import { getLastUpdated } from "../services/getLastUpdated";
 import './../css/Data.css'
 import { getConditionCode, getIconCode, getUVDescription, getWindDirectionIcon } from "../services/conditionCodes";
 
-export const Data = ({location, current, loading}) => {
+export const Data = ({location, current}) => {
   const {
     temp_c,
     condition,
@@ -11,6 +11,7 @@ export const Data = ({location, current, loading}) => {
     humidity,
     feelslike_c,
     last_updated,
+    is_day,
     wind_dir,
     pressure_mb,
     uv
@@ -27,6 +28,7 @@ export const Data = ({location, current, loading}) => {
     let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return fecha.toLocaleDateString('es-ES', options);
   }
+  let day = is_day ? true : false;
 
   return (
     <div className="data">
@@ -38,14 +40,13 @@ export const Data = ({location, current, loading}) => {
         <div className="widget-data">
           <i className={`bi ${getIconCode(condition.code)}`}></i> 
           <h1>{temp_c}°C</h1>
-          <h2>{getConditionCode(condition.code)}</h2>
+          <h2>{getConditionCode(condition.code, day)}</h2>
         </div>
         <div className="widget-info">
           <div className="viento">
             <i className="bi bi-wind"></i>
             <h5>Viento</h5>
-            <p>{wind_kph} Km/h</p>
-            <i className={`bi ${getWindDirectionIcon(wind_dir)}`}></i>
+            <p>{wind_kph}Km/h <i className={`bi ${getWindDirectionIcon(wind_dir)}`}></i></p>
           </div>
           <div className="humedad">
             <i className="bi bi-droplet-half"></i>

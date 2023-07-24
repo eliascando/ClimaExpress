@@ -132,7 +132,17 @@ const uvIndexDescription = {
 export const getConditionCode = (code) => {
     return conditionCodes[code];
 }
-export const getIconCode = (code) => {
+export const getIconCode = (code, day) => {
+    if (day && code === 1000) {
+        return "bi-brightness-high";
+    }else if(!day && code === 1000) {
+        return "bi-moon";
+    }else if (day && code === 1003) {
+        return "bi-cloud-sun";
+    }else if(!day && code === 1003) {
+        return "bi-cloud-moon";
+    }
+
     return iconCodes[code];
 }
 
