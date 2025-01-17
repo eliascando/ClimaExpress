@@ -1,0 +1,18 @@
+{
+    "N": "bi-arrow-up",
+    "NNE": "bi-arrow-up-right",
+    "NE": "bi-arrow-up-right",
+    "ENE": "bi-arrow-up-right",
+    "E": "bi-arrow-right",
+    "ESE": "bi-arrow-down-right",
+    "SE": "bi-arrow-down-right",
+    "SSE": "bi-arrow-down-right",
+    "S": "bi-arrow-down",
+    "SSW": "bi-arrow-down-left",
+    "SW": "bi-arrow-down-left",
+    "WSW": "bi-arrow-down-left",
+    "W": "bi-arrow-left",
+    "WNW": "bi-arrow-up-left",
+    "NW": "bi-arrow-up-left",
+    "NNW": "bi-arrow-up-left"
+}

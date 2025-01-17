@@ -1,6 +1,12 @@
-export function getLastUpdated(last_updated){
+export function getLastUpdated(last_updated) {
+  if (!last_updated) return '';
   let fechaActual = new Date();
-  let fechaActualizacion = new Date(last_updated);
+  let fechaActualizacion = new Date(last_updated.replace(' ', 'T'));
+  
+  if (isNaN(fechaActualizacion.getTime())) {
+    return '';
+  }
+
   let tiempoTranscurrido = fechaActual - fechaActualizacion;
   let segundos = Math.floor(tiempoTranscurrido / 1000);
   let minutos = Math.floor(segundos / 60);
@@ -21,6 +27,9 @@ export function getLastUpdated(last_updated){
     tiempo = `${minutos} minuto(s)`;
   } else if (segundos > 0) {
     tiempo = `${segundos} segundo(s)`;
+  } else {
+    tiempo = 'justo ahora';
   }
+  
   return tiempo;
 }
